@@ -139,7 +139,7 @@
         // possible: options, theme_mods, theme_mods_expanded, transient. Not fully functional, warning!
         'use_cdn'              => true,
         // If you prefer not to use the CDN for Select2, Ace Editor, and others, you may download the Redux Vendor Support plugin yourself and run locally or embed it in your code.
-
+        'show_options_object' => false,
         // HINTS
         'hints'                => array(
             'icon'          => 'el el-question-sign',

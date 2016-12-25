@@ -8,7 +8,7 @@
  *
  * @package Cot_Multipurpose_Wp_theme
  */
-global $redux_demo;
+global $cot_opt;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -25,7 +25,7 @@ global $redux_demo;
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<?php /*
+			<?php /* TODO remove this cod with proper code
 			 if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
@@ -41,8 +41,8 @@ global $redux_demo;
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                     </button>
-                                    <a class="navbar-brand" href="index.html">
-                                        <img src="<?php echo $redux_demo['cot-logo']['url'];?>" alt="<?php bloginfo('Name');?>">
+                                    <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                        <img src="<?php echo esc_url($cot_opt['cot-logo']['url']);?>" alt="<?php bloginfo( 'name' );?>">
                                     </a>
                                 </div>
                                 <!-- Collect the nav links, forms, and other content for toggling -->
