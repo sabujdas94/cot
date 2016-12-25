@@ -60,10 +60,10 @@ function cot_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'cot_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+//	add_theme_support( 'custom-background', apply_filters( 'cot_custom_background_args', array(
+//		'default-color' => 'ffffff',
+//		'default-image' => '',
+//	) ) );
 }
 endif;
 add_action( 'after_setup_theme', 'cot_setup' );
@@ -102,8 +102,22 @@ add_action( 'widgets_init', 'cot_widgets_init' );
  * Enqueue scripts and styles.
  */
 function cot_scripts() {
-	wp_enqueue_style( 'cot-style', get_stylesheet_uri() );
-
+        wp_enqueue_style('cot-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans');
+        
+        wp_enqueue_style('bootstrap', get_template_directory_uri() .'/css/bootstrap/css/bootstrap.min.css');
+        
+        wp_enqueue_style('font-awesome', get_template_directory_uri() .'/css/font-awesome/css/font-awesome.min.css');
+        
+        wp_enqueue_style( 'cot-style', get_stylesheet_uri() );
+        
+        wp_enqueue_style('cot-media-query', get_template_directory_uri() .'/css/media-queries.css');
+        
+        wp_enqueue_style('cot-content-sidebar', get_template_directory_uri() .'/layouts/content-sidebar.css');
+        
+        wp_enqueue_script('bootstrap', get_template_directory_uri() .'/js/bootstrap.min.js', array('jquery'),'20161225', true);
+        
+        wp_enqueue_script('cot-bootstrap-hover-dropdown', get_template_directory_uri() .'/js/bootstrap-hover-dropdown.js', array('jquery','bootstrap'), '20161225', true);
+        
 	wp_enqueue_script( 'cot-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'cot-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -138,3 +152,17 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load wp-bootstrap-navwalker
+ */
+require get_template_directory() .'/inc/helpers/wp_bootstrap_navwalker.php';
+/*
+ * Enable Redux Framework
+ */
+if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' );
+}
+if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/helpers/redux-framework/sample/config.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/inc/helpers/redux-framework/sample/config.php' );
+}
