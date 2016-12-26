@@ -111,7 +111,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			 * property is NOT null we apply it as the class name for the glyphicon.
 			 */
 			if ( ! empty( $item->icon ) )
-				if( !empty ( $item->iinline ) ){
+				if( !empty ( $item->iinline ) && $item->iinline ){
                                     $item_output .= '<a'. $attributes .'><i class=" cot_micon_inline ' . esc_attr( $item->icon ) . '"></i>&nbsp;';
                                 }else{
                                     $item_output .= '<a'. $attributes .'><i class=" cot_micon ' . esc_attr( $item->icon ) . '"></i><br>';

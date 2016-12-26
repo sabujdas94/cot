@@ -34,10 +34,11 @@ class cot_theme_menu_attr {
      * @return      void
      */
     function cot_theme_add_custom_nav_fields($menu_item) {
-
-//           $menu_item->subtitle = get_post_meta( $menu_item->ID, '_menu_item_subtitle', true );
+        
         $menu_item->icon = get_post_meta($menu_item->ID, '_menu_item_icon', true);
+        
         $menu_item->iinline = get_post_meta($menu_item->ID, '_menu_item_iinline', true);
+        
         return $menu_item;
     }
 
@@ -49,22 +50,43 @@ class cot_theme_menu_attr {
      * @return      void
      */
     function cot_theme_update_custom_nav_fields($menu_id = 0, $menu_item_db_id, $args) {
-
+        
+        $menu_id = (int)$menu_id;
+        
+        $menu_item_db_id = (int) $menu_item_db_id;
+        
         // Check if element is properly sent
            if ( is_array( $_REQUEST['menu-item-icon']) ) {
+               
                $icon_value = $_REQUEST['menu-item-icon'][$menu_item_db_id];
+               
                update_post_meta( $menu_item_db_id, '_menu_item_icon', strip_tags( $icon_value ) );
            }
+          
+           
         // Check if element is properly sent
         if (isset($_REQUEST['menu-item-iinline'])) {
+           
             if (is_array($_REQUEST['menu-item-iinline'])) {
+            
                 if (!empty($_REQUEST['menu-item-iinline'][$menu_item_db_id])) {
+                
                     $iinline_value = 1;
+                    
                 } else {
+                    
                     $iinline_value = 0;
+                    
                 }
+                
                 update_post_meta($menu_item_db_id, '_menu_item_iinline', (int) $iinline_value);
+                
             }
+            
+        }else{
+           
+           update_post_meta($menu_item_db_id, '_menu_item_iinline', (int) 0 );
+           
         }
     }
 
