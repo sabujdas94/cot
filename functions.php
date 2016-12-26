@@ -112,7 +112,7 @@ function cot_scripts() {
         
         wp_enqueue_style('cot-media-query', get_template_directory_uri() .'/css/media-queries.css');
         
-        wp_enqueue_style('cot-content-sidebar', get_template_directory_uri() .'/layouts/content-sidebar.css');
+        //wp_enqueue_style('cot-content-sidebar', get_template_directory_uri() .'/layouts/content-sidebar.css');
         
         wp_enqueue_script('bootstrap', get_template_directory_uri() .'/js/bootstrap.min.js', array('jquery'),'20161225', true);
         

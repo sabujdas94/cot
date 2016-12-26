@@ -56,5 +56,5 @@ global $cot_opt;
             </div>
         </div><!-- .site-branding -->
     </header><!-- #masthead -->
-
+    <hr class="cot_hr_boder">
     <div id="content" class="site-content">

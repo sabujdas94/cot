@@ -43,6 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
         ## Captions
         ## Galleries
+# Divider
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -805,8 +806,10 @@ ul.navbar-nav li a i.cot_micon {
 ## Navbar-brand
 --------------------------------------------------------------*/
 
-.navbar>.container .navbar-brand {
-    margin-left: 0;
+.navbar > .container .navbar-brand {
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-top: 6px;
 }
 
 .navbar-brand {
@@ -1001,4 +1004,13 @@ object {
 
 .gallery-caption {
     display: block;
+}
+
+/*--------------------------------------------------------------
+# Divider
+--------------------------------------------------------------*/
+hr.cot_hr_boder {
+  margin: 0 auto;
+  opacity: 0.3;
+  width: 100%;
 }
