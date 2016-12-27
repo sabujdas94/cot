@@ -92,8 +92,8 @@ function cot_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'cot' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<div class="widget-title"><h3>',
+		'after_title'   => '</h3></div>',
 	) );
 }
 add_action( 'widgets_init', 'cot_widgets_init' );
@@ -112,7 +112,7 @@ function cot_scripts() {
         
         wp_enqueue_style('cot-media-query', get_template_directory_uri() .'/css/media-queries.css');
         
-        //wp_enqueue_style('cot-content-sidebar', get_template_directory_uri() .'/layouts/content-sidebar.css');
+        wp_enqueue_style('cot-content-sidebar', get_template_directory_uri() .'/layouts/content-sidebar.css');
         
         wp_enqueue_script('bootstrap', get_template_directory_uri() .'/js/bootstrap.min.js', array('jquery'),'20161225', true);
         

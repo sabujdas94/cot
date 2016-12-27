@@ -12,6 +12,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
+                if( is_sticky() ){ ?>
+                    <i class="fa fa-thumb-tack cot_sticky_post" aria-hidden="true"></i>
+                <?php }
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
