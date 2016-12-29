@@ -355,7 +355,7 @@ button,
 input,
 select,
 textarea {
-    color: #404040;
+    color: #212121;
     font-family: "Open Sans",sans-serif;
     font-size: 14px;
     font-size: 1.4rem;
@@ -635,7 +635,6 @@ table {
 }
 
 thead th {
-    border-bottom: 2px solid #bbb;
     padding-bottom: 0.5em;
 }
 
@@ -810,7 +809,10 @@ ul.navbar-nav li a i.cot_micon {
 ## Links
 --------------------------------------------------------------*/
 a {
-    color: royalblue;
+    color: rgba(157, 66, 107, 0.8);
+    cursor: pointer;
+    text-decoration: none;
+
 }
 
 a:visited {
@@ -820,7 +822,10 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-    color: midnightblue;
+    color: rgba(157, 66, 107, 1);
+    outline: none;
+    text-decoration: none;
+
 }
 
 a:focus {
@@ -846,44 +851,44 @@ a:active {
 
 /*Widget area title style*/
 .widget-title {
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    position: relative;
 }
 
 .sidebar .widget-title h3 {
-  color: #27343e;
-  font-family: "Montserrat",sans-serif;
-  font-style: normal;
-  letter-spacing: 1px;
-  margin: 0;
-  text-transform: uppercase;
+    color: #27343e;
+    font-family: "Montserrat",sans-serif;
+    font-style: normal;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 .sidebar .widget-title::before {
-  background: #f0f0f0 none repeat scroll 0 0;
-  bottom: 0;
-  content: "";
-  height: 2px;
-  left: 0;
-  position: absolute;
-  width: 100%;
+    background: #f0f0f0 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
 }
 
 .sidebar .widget-title::after {
-  background: #9D426B none repeat scroll 0 0;
-  bottom: 0;
-  content: "";
-  height: 2px;
-  left: 0;
-  position: absolute;
-  width: 40px;
+    background: #9D426B none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 40px;
 }
 
 /*Search box widget*/
 .search-box .form-group {
-  margin: 0;
-  position: relative;
+    margin: 0;
+    position: relative;
 }
 .search-box .form-group input[type="text"], 
 .search-box .form-group input[type="search"] {
@@ -893,38 +898,78 @@ a:active {
     width: 100%;
 }
 .search-box .form-group button {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  border: medium none;
-  color: #9d426b;
-  display: block;
-  height: 46px;
-  line-height: 46px;
-  padding: 0;
-  position: absolute;
-  right: 0;
-  text-align: left;
-  top: 0;
-  width: 30px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #9d426b;
+    display: block;
+    height: 46px;
+    line-height: 46px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    top: 0;
+    width: 30px;
 }
 
 /*Widget list style*/
+.widget{
+    color: #5b5b5b;
+}
 .widget ul {
-  list-style: outside none none;
-  margin: 0;
-  padding: 0;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
 }
-.widget ul > li, .widget ul > li > a {
-  color: #070707;
-  font-family: "Open Sans",sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  margin-bottom: 10px;
-  position: relative;
+.widget ul > li,
+.widget ul > li > a {
+    font-family: "Open Sans",sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    position: relative;
 }
+.widget ul > li > a {
+    color: #070707;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 87%;
+}
+/*Widget style for calendar*/
+#wp-calendar tbody {
+    color: #aaa;
+}
+#wp-calendar thead {
+    font-size: 10px;
+}
+#wp-calendar tr {
+    border-bottom: medium none;
+}
+#wp-calendar tbody td {
+    background: #f5f5f5;
+    border: 1px solid #fff;
+    text-align: center;
+    padding: 8px;
+}
+#wp-calendar tbody .pad {
+    background: none;
+}
+#wp-calendar tbody td:hover {
+    background: #fff;
+}
+
+/*Widget menu*/ 
+.widget ul.children > li,
+.widget ul.sub-menu > li {
+    border-bottom: 0px;
+    border-top: 1px solid #f4f4f4;
+    margin-left: 10px;
+}
+
 .sidebar .widget select {
-  border: 1px solid #e0e0e0;
-  padding: 5px 10px;
-  width: 100%;
+    border: 1px solid #e0e0e0;
+    padding: 5px 10px;
+    width: 100%;
 }
 /*--------------------------------------------------------------
 # Content
