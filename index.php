@@ -38,11 +38,13 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
 
-			endwhile;
+			endwhile; ?>
 
-			the_posts_navigation();
+                    <div class="pagination-style">
+                        <?php cot_the_pagination(); ?>
+                    </div>
 
-		else :
+		<?php else :
 
 			get_template_part( 'template-parts/content', 'none' );
 

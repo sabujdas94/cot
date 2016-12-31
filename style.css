@@ -30,11 +30,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Typography
 # Forms
 # Elements
+# Links
 # Tables
+# Global
 # Header
         ## Menus
         ## Navbar-brand
-        ## Links
 # Widgets
 # Content
         ## Posts and pages
@@ -49,215 +50,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust:     100%;
-}
-
-body {
-    margin: 0;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-    display: block;
-}
-
-audio,
-canvas,
-progress,
-video {
-    display: inline-block;
-    vertical-align: baseline;
-}
-
-audio:not([controls]) {
-    display: none;
-    height: 0;
-}
-
-[hidden],
-template {
-    display: none;
-}
-
-a {
-    background-color: transparent;
-}
-
-a:active,
-a:hover {
-    outline: 0;
-}
-
-abbr[title] {
-    border-bottom: 1px dotted;
-}
-
-b,
-strong {
-    font-weight: bold;
-}
-
-dfn {
-    font-style: italic;
-}
-
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-}
-
-mark {
-    background: #ff0;
-    color: #000;
-}
-
-small {
-    font-size: 80%;
-}
-
-sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
-sup {
-    top: -0.5em;
-}
-
-sub {
-    bottom: -0.25em;
-}
-
-img {
-    border: 0;
-}
-
-svg:not(:root) {
-    overflow: hidden;
-}
-
-figure {
-    margin: 1em 40px;
-}
-
-hr {
-    box-sizing: content-box;
-    height: 0;
-}
-
-pre {
-    overflow: auto;
-}
-
-code,
-kbd,
-pre,
-samp {
-    font-family: monospace, monospace;
-    font-size: 1em;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-    color: inherit;
-    font: inherit;
-    margin: 0;
-}
-
-button {
-    overflow: visible;
-}
-
-button,
-select {
-    text-transform: none;
-}
-
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    -webkit-appearance: button;
-    cursor: pointer;
-}
-
-button[disabled],
-html input[disabled] {
-    cursor: default;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-
-input {
-    line-height: normal;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-    box-sizing: border-box;
-    padding: 0;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    height: auto;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
-}
-
-fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
-}
-
-legend {
-    border: 0;
-    padding: 0;
-}
-
-textarea {
-    overflow: auto;
-}
-
-optgroup {
-    font-weight: bold;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-td,
-th {
-    padding: 0;
+*{
+    margin:0px;
+    padding:0px;
+    border:none;
+    outline:none;
 }
 /*--------------------------------------------------------------
 # Accessibility
@@ -623,6 +420,38 @@ img {
 figure {
     margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+a {
+    color: rgba(157, 66, 107, 0.8);
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: rgba(157, 66, 107, 1);
+    outline: none;
+    text-decoration: none;
+
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
 
 /*--------------------------------------------------------------
 # Tables
@@ -659,6 +488,35 @@ td:first-child {
 th:last-child,
 td:last-child {
     padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
+.cot-theme-btn{
+    cursor: pointer;
+    display:inline-block;
+    transition:all 0.3s ease;
+    -moz-transition:all 0.3s ease;
+    -webkit-transition:all 0.3s ease;
+    -ms-transition:all 0.3s ease;
+    -o-transition:all 0.3s ease;
+}
+.defult-btn {
+    border: 2px solid #eee;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.defult-btn > a,
+a.defult-btn{
+    color: #27343e;
+}
+.defult-btn:hover > a,
+a.defult-btn:hover,
+defult-btn:hover{
+    border-color: rgba(157, 66, 107, 1);
+    color: rgba(157, 66, 107, 1);
 }
 /*--------------------------------------------------------------
 # Header
@@ -803,38 +661,6 @@ ul.navbar-nav li a i.cot_micon {
 .navbar-brand {
     height: auto;
     width: auto;
-}
-
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-    color: rgba(157, 66, 107, 0.8);
-    cursor: pointer;
-    text-decoration: none;
-
-}
-
-a:visited {
-    color: purple;
-}
-
-a:hover,
-a:focus,
-a:active {
-    color: rgba(157, 66, 107, 1);
-    outline: none;
-    text-decoration: none;
-
-}
-
-a:focus {
-    outline: thin dotted;
-}
-
-a:hover,
-a:active {
-    outline: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1006,7 +832,7 @@ a:active {
 }
 
 .hentry {
-    margin: 0 0 1.5em;
+    margin: 0 0 60px;
 }
 
 .byline,
@@ -1022,7 +848,7 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-    margin: 1.5em 0 0;
+    margin: 1.5em 0;
 }
 
 .page-links {
@@ -1047,6 +873,37 @@ a:active {
     height: 5px;
     margin-top: 15px;
     width: 30px;
+}
+.pagination-style {
+    position: relative;
+    font-family: 'Montserrat',sans-serif;
+}
+.pagination-style li {
+    position: relative;
+    display: inline-block;
+    margin: 0px 5px 10px 0px;
+}
+.pagination > li > a, .pagination > li > span {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #27343e;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+    transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+}
+.pagination > li > a:hover,
+.pagination > li > span{
+    background-color: #9D426B;
+    border-color: #9D426B;
+    color: #fff;
 }
 /*--------------------------------------------------------------
 ## Comments
