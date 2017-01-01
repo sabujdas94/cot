@@ -92,8 +92,8 @@ function cot_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'cot' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<div class="widget-title"><h3>',
+		'after_title'   => '</h3></div>',
 	) );
 }
 add_action( 'widgets_init', 'cot_widgets_init' );
@@ -157,6 +157,7 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load wp-bootstrap-navwalker
  */
 require get_template_directory() .'/inc/helpers/wp_bootstrap_navwalker.php';
+
 /*
  * Enable Redux Framework
  */
@@ -166,3 +167,8 @@ if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/R
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/helpers/redux-framework/sample/config.php' ) ) {
     require_once( dirname( __FILE__ ) . '/inc/helpers/redux-framework/sample/config.php' );
 }
+
+/*
+ * Load icon attribute add class file
+ */
+require get_template_directory() . '/inc/menu-attribute/icon-menu.php';
