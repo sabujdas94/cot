@@ -112,7 +112,7 @@ function cot_scripts() {
         
         wp_enqueue_style('cot-media-query', get_template_directory_uri() .'/css/media-queries.css');
         
-        wp_enqueue_style('cot-content-sidebar', get_template_directory_uri() .'/layouts/content-sidebar.css');
+        //wp_enqueue_style('cot-content-sidebar', get_template_directory_uri() .'/layouts/content-sidebar.css');
         
         wp_enqueue_script('bootstrap', get_template_directory_uri() .'/js/bootstrap.min.js', array('jquery'),'20161225', true);
         
@@ -157,6 +157,7 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load wp-bootstrap-navwalker
  */
 require get_template_directory() .'/inc/helpers/wp_bootstrap_navwalker.php';
+
 /*
  * Enable Redux Framework
  */
@@ -166,3 +167,8 @@ if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/R
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/helpers/redux-framework/sample/config.php' ) ) {
     require_once( dirname( __FILE__ ) . '/inc/helpers/redux-framework/sample/config.php' );
 }
+
+/*
+ * Load icon attribute add class file
+ */
+require get_template_directory() . '/inc/menu-attribute/icon-menu.php';
