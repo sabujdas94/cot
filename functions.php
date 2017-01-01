@@ -41,6 +41,13 @@ function cot_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+        
+        add_image_size( 'cot_380x300', 380, 300, true );        // cot_380x300 Gallery
+	add_image_size( 'cot_371x226', 371, 226, true );        // cot_371x226 Blog
+	add_image_size( 'cot_80x65', 80, 65, true );            // cot_80x65 gallery Widget
+	add_image_size( 'cot_270x260', 270, 260, true );        // cot_270x260 Team
+	add_image_size( 'cot_1200x320', 1200, 320, true );      // cot_1200x320 Blog Pages
+	add_image_size( 'cot_190x120', 190, 120, true );        // cot_190x120 product carousel
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -92,8 +99,8 @@ function cot_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'cot' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<div class="widget-title"><h3>',
+		'after_title'   => '</h3></div>',
 	) );
 }
 add_action( 'widgets_init', 'cot_widgets_init' );
@@ -102,26 +109,36 @@ add_action( 'widgets_init', 'cot_widgets_init' );
  * Enqueue scripts and styles.
  */
 function cot_scripts() {
+        /*
+         * Style Enqueue
+         */
         wp_enqueue_style('cot-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans');
         
         wp_enqueue_style('bootstrap', get_template_directory_uri() .'/css/bootstrap/css/bootstrap.min.css');
         
         wp_enqueue_style('font-awesome', get_template_directory_uri() .'/css/font-awesome/css/font-awesome.min.css');
         
-        wp_enqueue_style( 'cot-style', get_stylesheet_uri() );
+        wp_enqueue_style('animate', get_template_directory_uri() .'/css/animate.css');
         
-        wp_enqueue_style('cot-media-query', get_template_directory_uri() .'/css/media-queries.css');
+        wp_enqueue_style( 'cot-style', get_stylesheet_uri() );
         
         wp_enqueue_style('cot-content-sidebar', get_template_directory_uri() .'/layouts/content-sidebar.css');
         
-        wp_enqueue_script('bootstrap', get_template_directory_uri() .'/js/bootstrap.min.js', array('jquery'),'20161225', true);
+        wp_enqueue_style('cot-media-query', get_template_directory_uri() .'/css/media-queries.css');
         
-        wp_enqueue_script('cot-bootstrap-hover-dropdown', get_template_directory_uri() .'/js/bootstrap-hover-dropdown.js', array('jquery','bootstrap'), '20161225', true);
+        /*
+        *   Script Enqueue
+        */
+        wp_enqueue_script('bootstrap', get_template_directory_uri() .'/js/bootstrap.min.js', array('jquery'), false, true);
         
-	wp_enqueue_script( 'cot-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+        wp_enqueue_script('cot-bootstrap-hover-dropdown', get_template_directory_uri() .'/js/bootstrap-hover-dropdown.js', array('jquery','bootstrap'), false, true);
+        
+	wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.min.js', array(), false, true );
 
 	wp_enqueue_script( 'cot-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
+        
+        wp_enqueue_script('script-init', get_template_directory_uri().'/js/scripts.js', array(), null, true);
+        
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -157,6 +174,7 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load wp-bootstrap-navwalker
  */
 require get_template_directory() .'/inc/helpers/wp_bootstrap_navwalker.php';
+
 /*
  * Enable Redux Framework
  */
@@ -166,3 +184,8 @@ if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/R
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/helpers/redux-framework/sample/config.php' ) ) {
     require_once( dirname( __FILE__ ) . '/inc/helpers/redux-framework/sample/config.php' );
 }
+
+/*
+ * Load icon attribute add class file
+ */
+require get_template_directory() . '/inc/menu-attribute/icon-menu.php';
