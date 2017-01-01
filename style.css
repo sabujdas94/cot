@@ -39,11 +39,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Widgets
 # Content
         ## Posts and pages
+        ## Pagination
         ## Comments
 # Infinite scroll
 # Media
         ## Captions
         ## Galleries
+# Footer
 # Divider
 --------------------------------------------------------------*/
 
@@ -152,10 +154,10 @@ button,
 input,
 select,
 textarea {
-    color: #212121;
+    color: #5b5b5b;
     font-family: "Open Sans",sans-serif;
     font-size: 14px;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     line-height: 1.7em;
 }
 
@@ -166,41 +168,38 @@ h4,
 h5,
 h6 {
     clear: both;
+    color: #070707;
+    font-family: 'Montserrat',serif;
 }
 h1{
     font-weight: 700;
-    font-size: 46px;
-    font-size: 4.6rem;
+    font-size: 36px;
+    font-size: 3.6rem;
 }
 
 h2{
-    font-size: 20px;
-    font-size: 2rem;
+    font-size: 28px;
+    font-size: 2.8rem;
 }
 h3{
-    font-size: 14px;
-    font-size: 1.4rem;
-    font-style: italic;
-    font-weight: 100;
-    line-height: 26px;
+    font-size: 20px;
+    font-size: 2rem;
+    font-weight: normal;
 }
 
 h4{
-    text-transform: uppercase;
-    font-size: 16px;
-    font-size: 1.6px;
+    font-size: 20px;
+    font-size: 2rem;
     word-spacing: 2px;
 }
 h5{
-    text-transform: uppercase;
-    font-size: 12px;
-    font-size: 1.2rem;
+    font-size: 18px;
+    font-size: 1.8rem;
     word-spacing: 2px;
 }
 h6{
-    text-transform: uppercase;
-    font-size: 10px;
-    font-size: 1rem;
+    font-size: 16px;
+    font-size: 1.6rem;
     word-spacing: 2px;
     letter-spacing: 2px;
 }
@@ -225,25 +224,6 @@ blockquote {
 
 address {
     margin: 0 0 1.5em;
-}
-
-pre {
-    background: #eee;
-    font-family: "Courier 10 Pitch", Courier, monospace;
-    font-size: 15px;
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 1.6em;
-}
-
-code,
-kbd,
-tt,
-var {
-    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
 abbr,
@@ -418,13 +398,13 @@ img {
 }
 
 figure {
-    margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+    margin: 0 0 1em; /* Extra wide images within figure tags don't overflow the content area. */
 }
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
 a {
-    color: rgba(157, 66, 107, 0.8);
+    color: rgba(157, 66, 107, 1);
     cursor: pointer;
     text-decoration: none;
 
@@ -437,7 +417,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-    color: rgba(157, 66, 107, 1);
+    color: #070707;
     outline: none;
     text-decoration: none;
 
@@ -460,7 +440,7 @@ a:active {
 table {
     border-collapse: collapse;
     margin: 0 0 1.5em;
-    width: 100%;
+    width: auto;
 }
 
 thead th {
@@ -677,7 +657,7 @@ ul.navbar-nav li a i.cot_micon {
 
 /*Widget area title style*/
 .widget-title {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     padding-bottom: 15px;
     position: relative;
 }
@@ -685,6 +665,7 @@ ul.navbar-nav li a i.cot_micon {
 .sidebar .widget-title h3 {
     color: #27343e;
     font-family: "Montserrat",sans-serif;
+    font-size: 14px;
     font-style: normal;
     letter-spacing: 1px;
     margin: 0;
@@ -783,7 +764,12 @@ ul.navbar-nav li a i.cot_micon {
 #wp-calendar tbody td:hover {
     background: #fff;
 }
-
+#wp-calendar tfoot {
+    font-size: 13px;
+}
+#wp-calendar #next{
+    text-align: right;
+}
 /*Widget menu*/ 
 .widget ul.children > li,
 .widget ul.sub-menu > li {
@@ -803,6 +789,54 @@ ul.navbar-nav li a i.cot_micon {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.entry-title {
+    margin: 0 0 5px;
+}
+
+.entry-content blockquote {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-left: 3px solid #9d426b;
+    color: #282828;
+    font-size: 14px;
+    line-height: 2em;
+    margin: 15px 0;
+    position: relative;
+}
+.entry-content thead {
+    border-bottom: 2px solid #e0e0e0;
+}
+.entry-content ul li ul li{
+    list-style: square;
+}
+.entry-content ul li ul li ul li{
+    list-style: circle;
+}
+.entry-content ol li{
+    list-style: decimal;
+}
+.entry-content ol li ol li{
+    list-style: upper-roman;
+}
+.entry-content ol li ol li ol li{
+    list-style: lower-alpha;
+}
+blockquote cite {
+    color: #5b5b5b;
+    display: block;
+    margin-top: 1em;
+    margin-left: 40%;
+    text-align: right;
+}
+
+blockquote.alignleft,
+blockquote.alignright {
+    text-align: justify;
+    width: 50%;
+}
+blockquote.alignright{
+    border-left: 0;
+    border-right: 3px solid #9d426b;
+}
 .site-content{
     padding-bottom: 50px;
     padding-top: 80px;
@@ -810,7 +844,8 @@ ul.navbar-nav li a i.cot_micon {
 .entry-title > a {
     color: #070707;
 }
-.entry-meta span {
+.entry-meta span,
+.entry-footer span{
     font-family: "Open Sans",sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -827,12 +862,15 @@ ul.navbar-nav li a i.cot_micon {
 .post.sticky {
     background: #f6f6f6 none repeat scroll 0 0;
     display: block;
-    padding: 5px 25px 25px;
     position: relative;
 }
 
 .hentry {
     margin: 0 0 60px;
+}
+
+.single-post .hentry {
+    margin-bottom: 15px;
 }
 
 .byline,
@@ -850,7 +888,12 @@ ul.navbar-nav li a i.cot_micon {
 .entry-summary {
     margin: 1.5em 0;
 }
-
+.entry-content ol,
+.entry-content ul,
+.comment .text ul,
+.comment .text ol {
+    padding-left: 20px;
+}
 .page-links {
     clear: both;
     margin: 0 0 1.5em;
@@ -865,6 +908,7 @@ ul.navbar-nav li a i.cot_micon {
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 99;
 }
 .entry-meta::after {
     background: rgba(157, 66, 107, 1) none repeat scroll 0 0;
@@ -874,6 +918,68 @@ ul.navbar-nav li a i.cot_micon {
     margin-top: 15px;
     width: 30px;
 }
+
+.image-box {
+    position: relative;
+}
+
+.entry-header .image-box .author {
+    background: #9D426B none repeat scroll 0 0;
+    bottom: 0;
+    color: #ffffff;
+    font-family: "Montserrat",serif;
+    font-size: 12px;
+    left: 0;
+    line-height: 20px;
+    padding: 5px 15px;
+    position: absolute;
+    text-transform: uppercase;
+    transition: all 500ms ease 0s;
+    z-index: 5;
+
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.entry-header .image-box:hover .author{
+    background-color: #5b5b5b;
+}
+.tags-links li {
+    display: inline-block;
+    margin : 0 30px;
+}
+
+.tags-links li:first-child {
+    margin-left: 0;
+}
+
+/*--------------------------------------------------------------
+## Pagination
+--------------------------------------------------------------*/
+.paginate-links > span, .paginate-links a {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #27343e;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    min-width: 36px;
+    padding: 7px 14px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 500ms ease 0s;
+
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+}
+
 .pagination-style {
     position: relative;
     font-family: 'Montserrat',sans-serif;
@@ -894,17 +1000,53 @@ ul.navbar-nav li a i.cot_micon {
     position: relative;
     text-decoration: none;
     transition: all 500ms ease;
+
     -webkit-transition: all 500ms ease;
     -ms-transition: all 500ms ease;
     -o-transition: all 500ms ease;
     -moz-transition: all 500ms ease;
 }
+.paginate-links > span,
+.paginate-links > a:hover,
 .pagination > li > a:hover,
 .pagination > li > span{
     background-color: #9D426B;
     border-color: #9D426B;
     color: #fff;
 }
+
+.post-navigation .nav-previous {
+    width: 50%;
+    float: left;
+    padding-right: 15%;
+}
+
+.post-navigation .nav-next {
+    width: 50%;	
+    float: right;
+    padding-left: 15%;
+    text-align: right;
+}
+
+.nav-indicator {
+    font-style: italic;
+    margin-bottom: 1em;
+    text-transform: lowercase;
+}
+
+.nav-previous h3 > a,
+.nav-next h3 > a{ 
+    color: #070707;
+    font-weight: 900; 
+}
+
+.post-nav-box {
+    padding: 2em 0;
+    margin-bottom: 4em;
+    border-top: hsl(0, 0%, 80%) solid 1px;
+    border-bottom: hsl(0, 0%, 80%) solid 1px; 
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -956,25 +1098,59 @@ object {
     margin-bottom: 1.5em;
     max-width: 100%;
 }
-
 .wp-caption img[class*="wp-image-"] {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
-
-.wp-caption .wp-caption-text {
-    margin: 0.8075em 0;
-}
-
 .wp-caption-text {
     text-align: center;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption{
+    background: rgba(0, 0, 0, 0.02) none repeat scroll 0 0;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    padding: 10px;
 }
 
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
+.site-main .gallery {
+    margin-bottom: 1.5em;
+}
+.site-main .gallery-item {
+    float: left;
+    margin-bottom: 0;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.gallery-caption {
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    color: #fff;
+    left: 0;
+    line-height: 1.5;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+}
+.gallery-item:hover .gallery-caption { 
+    opacity: 1; 
+}
+.site-main .gallery a img {
+    border: medium none;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+}
 .gallery {
+    clear: both;
+    display: table;
     margin-bottom: 1.5em;
 }
 
@@ -1021,6 +1197,22 @@ object {
     display: block;
 }
 
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer {
+    background: #e0e0e0 url("assets/pattern.jpg") repeat scroll left top;
+    padding-bottom: 10px;
+}
+.footer-border{
+    margin-top: 30px;
+    border-top: 1px dashed #ddd;
+}
+.footer-copyright {
+    line-height: 24px;
+    margin-top: 15px;
+    text-align: left;
+}
 /*--------------------------------------------------------------
 # Divider
 --------------------------------------------------------------*/

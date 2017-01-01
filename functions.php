@@ -41,6 +41,13 @@ function cot_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+        
+        add_image_size( 'cot_380x300', 380, 300, true );        // cot_380x300 Gallery
+	add_image_size( 'cot_371x226', 371, 226, true );        // cot_371x226 Blog
+	add_image_size( 'cot_80x65', 80, 65, true );            // cot_80x65 gallery Widget
+	add_image_size( 'cot_270x260', 270, 260, true );        // cot_270x260 Team
+	add_image_size( 'cot_1200x320', 1200, 320, true );      // cot_1200x320 Blog Pages
+	add_image_size( 'cot_190x120', 190, 120, true );        // cot_190x120 product carousel
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

@@ -14,11 +14,15 @@
                 <i class="fa fa-thumb-tack cot_sticky_post" aria-hidden="true"></i>
             <?php
             }
-            if (is_single()) :
-                the_title('<h1 class="entry-title">', '</h1>');
-            else :
-                the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-            endif;
+            if(has_post_thumbnail() ) : ?>
+            <figure class="image-box">
+                <a href="<?php echo esc_url(get_permalink(get_the_id()));?>"><?php the_post_thumbnail('cot_1200x320', array('class' => 'img-responsive'));?></a>
+                <a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )); ?>" class="author"><?php the_author();?></a>
+            </figure>
+            
+            <?php endif;
+            
+            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
 
             if ('post' === get_post_type()) :
                 ?>
@@ -35,7 +39,7 @@
         </div><!-- .entry-content -->
 
         <footer class="entry-footer">
-            <?php //cot_entry_footer();
+            <?php 
             echo '<div class="cot-theme-btn defult-btn"><a href="' . get_the_permalink() . '" title="' . get_the_title() . '" rel="bookmark">' . __('CONTINUE READING', 'cot') . '</a></div>';
             ?>
         </footer><!-- .entry-footer -->
