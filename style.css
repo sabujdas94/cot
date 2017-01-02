@@ -1,14 +1,14 @@
 /*
-Theme Name: Cot Multipurpose Wp theme
+Theme Name: Cot
 Theme URI: http://underscores.me/
 Author: Sabuj Das
 Author URI: https://www.facebook.com/sabujdas94
-Description: A multipurpose WordPress theme. Using this theme you can build your website awesome and eye catching.
+Description: Cot is a multipurpose WordPress theme. Using this theme you can build your website awesome and eye catching.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: cot
-Tags: Grid Layout, Left Sidebar, Right Sidebar, Two Columns, One Column, Custom Logo, Custom Header, Custom Menu, Footer Widgets,Full Width Template,  Post Formats, Sticky Post,Theme Options,Portfolio, Blog, Education, Creative, Corporate, responsive-layout
+Tags: one-column, two-columns, right-sidebar, custom-menu, editor-style, featured-images, sticky-post, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1034,10 +1034,12 @@ blockquote.alignright{
     text-transform: lowercase;
 }
 
-.nav-previous h3 > a,
-.nav-next h3 > a{ 
+.nav-previous h6 > a,
+.nav-next h6 > a{ 
     color: #070707;
-    font-weight: 900; 
+    font-weight: 900;
+    letter-spacing: normal;
+    line-height: 1.5;
 }
 
 .post-nav-box {

@@ -104,6 +104,6 @@ class cot_theme_menu_attr {
 
 }
 
-// instantiate plugin's class
+// Instantiate menu attribute class
 $GLOBALS['cot_theme_menu_attr'] = new cot_theme_menu_attr();
 include_once( 'edit_custom_walker.php' );

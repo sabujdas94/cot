@@ -74,8 +74,8 @@
         //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
         'allow_sub_menu'       => true,
         // Show the sections below the admin menu item or not
-        'menu_title'           => __( 'Cot Options', 'redux-framework-demo' ),
-        'page_title'           => __( 'Cot Options', 'redux-framework-demo' ),
+        'menu_title'           => __( 'Cot Options', 'cot' ),
+        'page_title'           => __( 'Cot Options', 'cot' ),
         // You will need to generate a Google API key to use this feature.
         // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
         'google_api_key'       => '',
@@ -175,19 +175,19 @@
     $args['admin_bar_links'][] = array(
         'id'    => 'redux-docs',
         'href'  => 'http://docs.reduxframework.com/',
-        'title' => __( 'Documentation', 'redux-framework-demo' ),
+        'title' => __( 'Documentation', 'cot' ),
     );
 
     $args['admin_bar_links'][] = array(
         //'id'    => 'redux-support',
         'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
-        'title' => __( 'Support', 'redux-framework-demo' ),
+        'title' => __( 'Support', 'cot' ),
     );
 
     $args['admin_bar_links'][] = array(
         'id'    => 'redux-extensions',
         'href'  => 'reduxframework.com/extensions',
-        'title' => __( 'Extensions', 'redux-framework-demo' ),
+        'title' => __( 'Extensions', 'cot' ),
     );
 
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
@@ -222,11 +222,11 @@
         }
         $args['intro_text'] = 'You need to click <b>Save Changes</b> after made any change';
     } else {
-        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo' );
+        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'cot' );
     }
 
     // Add content after the form.
-    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo' );
+    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'cot' );
 
     Redux::setArgs( $opt_name, $args );
 
@@ -242,19 +242,19 @@
     $tabs = array(
         array(
             'id'      => 'redux-help-tab-1',
-            'title'   => __( 'Theme Information 1', 'redux-framework-demo' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+            'title'   => __( 'Theme Information 1', 'cot' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'cot' )
         ),
         array(
             'id'      => 'redux-help-tab-2',
-            'title'   => __( 'Theme Information 2', 'redux-framework-demo' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+            'title'   => __( 'Theme Information 2', 'cot' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'cot' )
         )
     );
     Redux::setHelpTab( $opt_name, $tabs );
 
     // Set the help sidebar
-    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'redux-framework-demo' );
+    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'cot' );
     Redux::setHelpSidebar( $opt_name, $content );
 
 
@@ -278,29 +278,29 @@
 
     // -> START Basic Fields
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'General Settings', 'redux-framework-demo' ),
+        'title'            => __( 'General Settings', 'cot' ),
         'id'               => 'basic',
-        'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+        'desc'             => __( 'These are really basic fields!', 'cot' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-home'
     ) );
 
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Header Settings', 'redux-framework-demo' ),
+        'title'            => __( 'Header Settings', 'cot' ),
         'id'               => 'hearder-settings',
         'subsection'       => true,
         'customizer_width' => '450px',
-        'desc'             => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
+        'desc'             => __( 'For full documentation on this field, visit: ', 'cot' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
         'fields'           => array(
             array(
                 'id'       => 'cot-logo',
                 'type'     => 'media',
                 'url'      => true,
-                'title'    => __( 'Logo Image', 'redux-framework-demo' ),
+                'title'    => __( 'Logo Image', 'cot' ),
                 'compiler' => 'true',
                 //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'desc'     => __( 'Upload the logo image.', 'redux-framework-demo' ),
-                'subtitle' => __( 'Upload any media using the WordPress native uploader', 'redux-framework-demo' ),
+                'desc'     => __( 'Upload the logo image.', 'cot' ),
+                'subtitle' => __( 'Upload any media using the WordPress native uploader', 'cot' ),
                 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
                 //'hint'      => array(
                 //    'title'     => 'Hint Title',
@@ -407,8 +407,8 @@
         function dynamic_section( $sections ) {
             //$sections = array();
             $sections[] = array(
-                'title'  => __( 'Section via hook', 'redux-framework-demo' ),
-                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'redux-framework-demo' ),
+                'title'  => __( 'Section via hook', 'cot' ),
+                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'cot' ),
                 'icon'   => 'el el-paper-clip',
                 // Leave this as a blank section, no options just some intro text set above.
                 'fields' => array()
