@@ -9,7 +9,7 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area row">
     <main id="main" class="site-main col-md-9" role="main">
 
         <?php
@@ -28,8 +28,7 @@ get_header();
         ?>
 
     </main><!-- #main -->
-</div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_sidebar(); ?>
+</div><!-- #primary -->
+<?php get_footer();
