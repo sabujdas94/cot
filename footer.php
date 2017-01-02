@@ -19,7 +19,7 @@
                 <div class="footer-copyright">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'cot' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'cot' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'cot' ), 'cot', '<a href="https://www.facebook.com/sabujdas94" rel="designer">Sabuj Das</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'cot' ), 'Cot', '<a href="'. esc_url('https://www.facebook.com/sabujdas94','cot').'" rel="designer">Sabuj Das</a>' ); ?>
 		</div><!-- .site-info -->
             </div>
 	</footer><!-- #colophon -->

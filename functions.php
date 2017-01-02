@@ -173,7 +173,11 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load wp-bootstrap-navwalker
  */
-require get_template_directory() .'/inc/helpers/wp_bootstrap_navwalker.php';
+require_once( get_parent_theme_file_path('/inc/menu/wp_bootstrap_navwalker.php') ) ;
+/*
+ * Load icon attribute add class file
+ */
+require_once ( get_parent_theme_file_path( '/inc/menu/icon-menu.php' ) );
 
 /*
  * Enable Redux Framework
@@ -181,11 +185,6 @@ require get_template_directory() .'/inc/helpers/wp_bootstrap_navwalker.php';
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' ) ) {
     require_once( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' );
 }
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/helpers/redux-framework/sample/config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/inc/helpers/redux-framework/sample/config.php' );
+if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/helpers/redux-framework/option/config.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/inc/helpers/redux-framework/option/config.php' );
 }
-
-/*
- * Load icon attribute add class file
- */
-require get_template_directory() . '/inc/menu-attribute/icon-menu.php';

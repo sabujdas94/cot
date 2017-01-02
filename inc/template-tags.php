@@ -34,7 +34,7 @@ if (!function_exists('cot_posted_on')) :
             echo '<span class="comments-link">';
             /* translators: %s: post title */
             comments_popup_link(
-                    sprintf(__('Leave a Comment<span class="screen-reader-text"> on %s</span>'), get_the_title()), '<i class="fa fa-comments-o" aria-hidden="true"></i> 1', '<i class="fa fa-comments-o" aria-hidden="true"></i> %'
+                    sprintf(__('Leave a Comment<span class="screen-reader-text"> on %s</span>', 'cot'), get_the_title()), '<i class="fa fa-comments-o" aria-hidden="true"></i> 1', '<i class="fa fa-comments-o" aria-hidden="true"></i> %'
             );
             echo '</span>';
         }
@@ -187,11 +187,11 @@ if (!function_exists('cot_post_navigation')) :
         ?>
         <nav class="navigation post-navigation" role="navigation">
             <div class="post-nav-box clearfix">
-                <h1 class="screen-reader-text"><?php _e('Post navigation', 'my-simone'); ?></h1>
+                <h1 class="screen-reader-text"><?php _e('Post navigation', 'cot'); ?></h1>
                 <div class="nav-links">
                     <?php
-                    previous_post_link('<div class="nav-previous"><div class="nav-indicator">' . _x('Previous Post:', 'Previous post', 'cot') . '</div><h3>%link</h3></div>', '%title');
-                    next_post_link('<div class="nav-next"><div class="nav-indicator">' . _x('Next Post:', 'Next post', 'cot') . '</div><h3>%link</h3></div>', '%title');
+                    previous_post_link('<div class="nav-previous"><div class="nav-indicator">' . _x('Previous Post:', 'Previous post', 'cot') . '</div><h6>%link</h6></div>', '%title');
+                    next_post_link('<div class="nav-next"><div class="nav-indicator">' . _x('Next Post:', 'Next post', 'cot') . '</div><h6>%link</h6></div>', '%title');
                     ?>
                 </div><!-- .nav-links -->
             </div><!-- .post-nav-box -->
