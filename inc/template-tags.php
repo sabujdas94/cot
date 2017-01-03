@@ -185,7 +185,7 @@ if (!function_exists('cot_post_navigation')) :
             return;
         }
         ?>
-        <nav class="navigation post-navigation" role="navigation">
+        <nav class="navigation post-navigation wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms" role="navigation">
             <div class="post-nav-box clearfix">
                 <h1 class="screen-reader-text"><?php _e('Post navigation', 'cot'); ?></h1>
                 <div class="nav-links">

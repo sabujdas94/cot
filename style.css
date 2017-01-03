@@ -251,11 +251,12 @@ input[type="submit"] {
     border: 1px solid #9D426B;
     border-radius: 3px;
     background: #9D426B;
-    color: rgba(255, 255, 255, .8);
-    font-size: 13px;
-    font-size: 1.3rem;
+    color: #fff;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: 600;
     line-height: 1;
-    padding: .6em 1em .4em;
+    padding: 1em 2em;
 }
 
 button:hover,
@@ -297,9 +298,10 @@ textarea {
     color: #27343e;
     display: block;
     line-height: 24px;
-    padding: 3px;
+    padding: 10px;
     position: relative;
     transition: all 500ms ease 0s;
+    width: 100%;
 }
 
 select {
@@ -561,8 +563,8 @@ ul.navbar-nav li a i {
     color: #aaa;
 }
 
-ul.navbar-nav li a:hover i,
-ul.navbar-nav li a:focus i {
+ul.navbar-nav > li > a:hover i, 
+ul.navbar-nav > li > a:focus i {
     color: #fff;
 }
 
@@ -588,38 +590,16 @@ ul.navbar-nav li a:focus i {
 }
 
 ul.navbar-nav li .dropdown-menu a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+  border-left: 3px solid #666666;
+  border-top: 0 none;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-align: left;
 }
-
-ul.navbar-nav li.active .dropdown-menu a {
-    background: #fff;
-    color: #5d5d5d;
-    border: 0;
-}
-
-ul.navbar-nav li.active .dropdown-menu a:hover,
-ul.navbar-nav li.active .dropdown-menu a:focus {
-    background: #9d426b;
-    color: #fff;
-    border: 0;
-}
-
 ul.navbar-nav li.active .dropdown-menu > .active > a {
     background: #f8f8f8;
     color: #9d426b;
-    border: 0;
-}
-
-ul.navbar-nav li.active .dropdown-menu > .active > a:hover,
-ul.navbar-nav li.active .dropdown-menu > .active > a:focus {
-    background: #9d426b;
-    color: #fff;
-    border: 0;
-}
-
-ul.navbar-nav ul li a{
-    padding-left: 10px;
+    border-left-color: #9d426b;
 }
 
 .cot_micon_inline{
@@ -628,13 +608,50 @@ ul.navbar-nav ul li a{
 ul.navbar-nav li a i.cot_micon {
     line-height: 35px;
 }
+.dropdown-menu{
+    background: transparent;
+    padding: 0;
+}
+.navbar-nav > li > ul > li {
+  background: #fff none repeat scroll 0 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: block;
+}
+.navbar-nav > li > ul > li.dropdown > a::after {
+    color: #4b4b4b;
+    content: "\f061";
+    display: block;
+    font-family: "FontAwesome";
+    font-size: 10px;
+    font-weight: normal;
+    height: 20px;
+    line-height: 20px;
+    padding: 15px 0;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 0;
+    width: 10px;
+    z-index: 5;
+}
+
+ul.navbar-nav li .dropdown-menu a:hover,
+ul.navbar-nav li .dropdown-menu a:focus {
+    background: #fff;
+    border-left-color: #9d426b;
+    color: #9d426b;
+}
+ul.navbar-nav li .dropdown-menu a:hover > .fa,
+.navbar-nav > li > ul > li.dropdown > a:hover::after{
+    color:#9d426b;
+}
 ul.dropdown-menu li > ul.dropdown-menu{
-left: 100%;
-top: 0;
+    left: 100%;
+    top: 0;
 }
 
 ul.dropdown-menu li:hover > ul.dropdown-menu, ul.dropdown-menu li:focus > ul.dropdown-menu{
-display: block
+    display: block
 }
 /*--------------------------------------------------------------
 ## Navbar-brand
@@ -680,7 +697,8 @@ display: block
     text-transform: uppercase;
 }
 
-.sidebar .widget-title::before {
+.sidebar .widget-title::before,
+.comments-title::before{
     background: #f0f0f0 none repeat scroll 0 0;
     bottom: 0;
     content: "";
@@ -690,7 +708,8 @@ display: block
     width: 100%;
 }
 
-.sidebar .widget-title::after {
+.sidebar .widget-title::after,
+.comments-title::after{
     background: #9D426B none repeat scroll 0 0;
     bottom: 0;
     content: "";
@@ -1023,13 +1042,15 @@ blockquote.alignright{
     color: #fff;
 }
 
-.post-navigation .nav-previous {
+.post-navigation .nav-previous,
+.comment-navigation .nav-previous{
     width: 50%;
     float: left;
     padding-right: 15%;
 }
 
-.post-navigation .nav-next {
+.post-navigation .nav-next,
+.comment-navigation .nav-next{
     width: 50%;	
     float: right;
     padding-left: 15%;
@@ -1042,6 +1063,7 @@ blockquote.alignright{
     text-transform: lowercase;
 }
 
+.nav-previous a,
 .nav-previous h6 > a,
 .nav-next h6 > a{ 
     color: #070707;
@@ -1053,21 +1075,100 @@ blockquote.alignright{
 .post-nav-box {
     padding: 2em 0;
     margin-bottom: 4em;
-    border-top: hsl(0, 0%, 80%) solid 1px;
-    border-bottom: hsl(0, 0%, 80%) solid 1px; 
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0; 
 }
 
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+.comments-title {
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+.comments-area > ol {
+    padding: 0;
+    margin: 2em 0;
+    list-style-type: none;
+}
+
+ol.children { list-style-type: none; }
+
+.comment-list ol { margin-left: 50px; }
+
+.comment-meta { margin-bottom: 1em; }
+
+.comment-author .avatar {
+    width: 50px;
+    display: block;
+    float: left;
+    margin-right: 15px;
+}
+.comment-author .fn > a,
+.comment-metadata > a,
+.comment-reply-link{
+    color: #070707;
+}
+.comment-author .fn > a:hover,
+.comment-metadata > a:hover,
+.comment-reply-link:hover{
+    color: #9d426b;
+}
+
+.comment-content,
+.reply { margin-left: 70px; }
+
+.comment-body {
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
 .comment-content a {
     word-wrap: break-word;
 }
 
-.bypostauthor {
-    display: block;
+.comment-content ol { margin-left: 1.5em; }
+
+.reply {
+    font-weight: 600;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+.bypostauthor > .comment-body {
+    position: relative;
+    padding: 1em;
+    margin-bottom: 2em;
+    background: rgba(221,221,221,0.2);
+    border: none;
+}
+.comment-navigation {
+    padding: 1em 0;
+    margin: 3em 0;
+    border-top: hsl(0, 0%, 80%) solid 1px;
+    border-bottom: hsl(0, 0%, 80%) solid 1px;  
 }
 
+.comment-navigation i {
+    margin: 0 1em;
+}
+.comment-form label { display: block; }
+.comment-form .form-submit {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.required { color: red; }
+
+.comment-awaiting-moderation {
+    background: #83bc66 none repeat scroll 0 0;
+    color: #fff;
+    font-size: 14px;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    padding: 10px 15px;
+}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

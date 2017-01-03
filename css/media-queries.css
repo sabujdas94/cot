@@ -27,4 +27,11 @@
         width: 100%;
         padding: 1em 1.5em 0;   
     }
+    /* Comments responsive */   
+    .comment-list ol { margin-left: 0; }
+
+    .comment-content ol { margin-left: 1.5em; }
+
+    .comment-content,
+    .reply { margin-left: 0; }
 }
