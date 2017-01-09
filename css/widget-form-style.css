@@ -1,0 +1,13 @@
+/*
+CSS Stylesheet for widget form
+/* 
+    Created on : Jan 8, 2017, 9:05:12 AM
+    Author     : SABUJ
+*/
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}

@@ -169,7 +169,7 @@ h5,
 h6 {
     clear: both;
     color: #070707;
-    font-family: 'Montserrat',serif;
+    font-family: "Roboto",sans-serif;
 }
 h1{
     font-weight: 700;
@@ -590,11 +590,11 @@ ul.navbar-nav > li > a:focus i {
 }
 
 ul.navbar-nav li .dropdown-menu a {
-  border-left: 3px solid #666666;
-  border-top: 0 none;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  text-align: left;
+    border-left: 3px solid #666666;
+    border-top: 0 none;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-align: left;
 }
 ul.navbar-nav li.active .dropdown-menu > .active > a {
     background: #f8f8f8;
@@ -613,9 +613,9 @@ ul.navbar-nav li a i.cot_micon {
     padding: 0;
 }
 .navbar-nav > li > ul > li {
-  background: #fff none repeat scroll 0 0;
-  border-bottom: 1px solid #e0e0e0;
-  display: block;
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #e0e0e0;
+    display: block;
 }
 .navbar-nav > li > ul > li.dropdown > a::after {
     color: #4b4b4b;
@@ -687,7 +687,8 @@ ul.dropdown-menu li:hover > ul.dropdown-menu, ul.dropdown-menu li:focus > ul.dro
     position: relative;
 }
 
-.sidebar .widget-title h3 {
+.sidebar .widget-title h3,
+.footer-top .widget-title h3 {
     color: #27343e;
     font-family: "Montserrat",sans-serif;
     font-size: 14px;
@@ -982,6 +983,13 @@ blockquote.alignright{
     margin-left: 0;
 }
 
+/*Page Styl*/
+
+.page-template-page-fullwidth .site-content,
+.page-template-page-fullwidth .entry-content{
+    margin: 0;
+    padding: 0;
+}
 /*--------------------------------------------------------------
 ## Pagination
 --------------------------------------------------------------*/
@@ -1315,10 +1323,10 @@ object {
     background: #e0e0e0 url("assets/pattern.jpg") repeat scroll left top;
     padding-bottom: 10px;
 }
-.footer-border{
-    margin-top: 30px;
-    border-top: 1px dashed #ddd;
+.footer-top{
+    padding-top: 30px;
 }
+
 .footer-copyright {
     line-height: 24px;
     margin-top: 15px;
@@ -1331,4 +1339,7 @@ hr.cot_hr_boder {
     margin: 0 auto;
     opacity: 0.3;
     width: 100%;
+}
+.dashed-border{
+    border-top: 1px dashed #ddd;
 }

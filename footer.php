@@ -8,14 +8,17 @@
  *
  * @package Cot_Multipurpose_Wp_theme
  */
-
+global $cot_opt;
 ?>
 
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer clearfix" role="contentinfo">
             <div class="container">
-                <div class="footer-border"></div>
+                <div class="row">
+                <?php cot_footer_widget(); ?>
+                </div>
+                <div class="dashed-border"></div>
                 <div class="footer-copyright">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'cot' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'cot' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>

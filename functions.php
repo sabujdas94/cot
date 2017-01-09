@@ -104,6 +104,49 @@ function cot_widgets_init() {
         'before_title' => '<div class="widget-title"><h3>',
         'after_title' => '</h3></div>',
     ));
+    register_sidebar(array(
+        'name' => esc_html__('Footer 1st Column', 'cot'),
+        'id' => 'footer-1',
+        'description' => esc_html__('Add widgets here.', 'cot'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<div class="widget-title"><h3>',
+        'after_title' => '</h3></div>',
+    ));
+    register_sidebar(array(
+        'name' => esc_html__('Footer 2nd Column', 'cot'),
+        'id' => 'footer-2',
+        'description' => esc_html__('Add widgets here.', 'cot'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<div class="widget-title"><h3>',
+        'after_title' => '</h3></div>',
+    ));
+    register_sidebar(array(
+        'name' => esc_html__('Footer 3rd Column', 'cot'),
+        'id' => 'footer-3',
+        'description' => esc_html__('Add widgets here.', 'cot'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<div class="widget-title"><h3>',
+        'after_title' => '</h3></div>',
+    ));
+    register_sidebar(array(
+        'name' => esc_html__('Footer 4th Column', 'cot'),
+        'id' => 'footer-4',
+        'description' => esc_html__('Add widgets here.', 'cot'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<div class="widget-title"><h3>',
+        'after_title' => '</h3></div>',
+    ));
+    //Register the front page widgets
+    if (function_exists('siteorigin_panels_activate')) {
+        register_widget('Cot_Cover_Section');
+        register_widget('Cot_Heading');
+        register_widget('Cot_List_Widget');
+        register_widget('Cot_Video_Button');
+    }
 }
 
 add_action('widgets_init', 'cot_widgets_init');
@@ -115,7 +158,7 @@ function cot_scripts() {
     /*
      * Style Enqueue
      */
-    wp_enqueue_style('cot-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans');
+    wp_enqueue_style('cot-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto|Slabo+27px|Open+Sans');
 
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap/css/bootstrap.min.css');
 
@@ -125,7 +168,9 @@ function cot_scripts() {
 
     wp_enqueue_style('cot-style', get_stylesheet_uri());
 
-    wp_enqueue_style('cot-content-sidebar', get_template_directory_uri() . '/layouts/content-sidebar.css');
+    wp_enqueue_style('shortcodes', get_template_directory_uri() . '/css/shortcodes.css');
+
+    wp_enqueue_style('spaces', get_template_directory_uri() . '/css/spaces.bootstrap.css');
 
     wp_enqueue_style('cot-media-query', get_template_directory_uri() . '/css/media-queries.css');
 
@@ -133,14 +178,18 @@ function cot_scripts() {
      *   Script Enqueue
      */
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), false, true);
+    wp_enqueue_script('easing', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array('jquery'), false, true);
 
     wp_enqueue_script('cot-bootstrap-hover-dropdown', get_template_directory_uri() . '/js/bootstrap-hover-dropdown.js', array('jquery', 'bootstrap'), false, true);
 
     wp_enqueue_script('wow', get_template_directory_uri() . '/js/wow.min.js', array(), false, true);
 
+    wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/js/jquery.smooth-scroll.js', array(), false, true);
+
     wp_enqueue_script('cot-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
     wp_enqueue_script('script-init', get_template_directory_uri() . '/js/scripts.js', array(), null, true);
+
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -149,6 +198,10 @@ function cot_scripts() {
 
 add_action('wp_enqueue_scripts', 'cot_scripts');
 
+function cot_admin_script_enqueue() {
+    wp_enqueue_style('widget_form', get_template_directory_uri() . '/css/widget-form-style.css');
+}
+add_action('admin_print_scripts-widgets.php', 'cot_admin_script_enqueue');
 /**
  * Implement the Custom Header feature.
  */
@@ -174,27 +227,18 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-/**
- * Load wp-bootstrap-navwalker
- */
-require_once( get_template_directory() . '/inc/menu/wp_bootstrap_navwalker.php' );
-/*
- * Load icon attribute add class file
- */
-require_once ( get_template_directory() . '/inc/menu/icon-menu.php' );
-
-/*
- * Load TGM_Plugin_Activation class
- */
-
-require_once ( get_template_directory() . '/inc/helpers/tgm-plugin-activation/plugin.php' );
-
 /*
  * Enable Redux Framework
  */
 if (!class_exists('ReduxFramework') && file_exists(dirname(__FILE__) . '/ReduxFramework/ReduxCore/framework.php')) {
-    require_once( dirname(__FILE__) . '/ReduxFramework/ReduxCore/framework.php' );
+    include_once( dirname(__FILE__) . '/ReduxFramework/ReduxCore/framework.php' );
 }
 if (!isset($redux_demo) && file_exists(dirname(__FILE__) . '/inc/helpers/redux-framework/option/config.php')) {
-    require_once( dirname(__FILE__) . '/inc/helpers/redux-framework/option/config.php' );
+    include_once( dirname(__FILE__) . '/inc/helpers/redux-framework/option/config.php' );
 }
+
+/**
+ * Load required file loader.
+ */
+require get_template_directory() . '/inc/loader.php';
+

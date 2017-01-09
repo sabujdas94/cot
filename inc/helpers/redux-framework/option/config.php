@@ -1,6 +1,6 @@
 <?php
     /**
-     * ReduxFramework Sample Config File
+     * ReduxFramework Config File
      * For full documentation, please visit: http://docs.reduxframework.com/
      */
 
@@ -306,6 +306,40 @@
                 //    'title'     => 'Hint Title',
                 //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
                 //)
+            ),
+        )
+    ) );
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Footer Setting', 'cot' ),
+        'id'         => 'footer-setting',
+        'desc'       => __( 'For full documentation on this field, visit: ', 'cot' ) . '<a href="//docs.reduxframework.com/core/fields/image-select/" target="_blank">docs.reduxframework.com/core/fields/image-select/</a>',
+        'subsection' => true,
+        'fields'     => array(
+            array(
+                'id'       => 'footer-top-layout',
+                'type'     => 'image_select',
+                'title'    => __( 'Footer top layout', 'cot' ),
+                'desc'     => __( 'Choose your prepared footer top layout.', 'cot' ),
+                //Must provide key => value(array:title|img) pairs for radio options
+                'options'  => array(
+                    '4' => array(
+                        'alt' => '3 Column',
+                        'img' => get_template_directory_uri() . '/assets/img/3col.png'
+                    ),
+                    '3' => array(
+                        'alt' => '4 Column Left',
+                        'img' => get_template_directory_uri() . '/assets/img/4col.png'
+                    ),
+                    '6r' => array(
+                        'alt' => '3 Column Right Big',
+                        'img' => get_template_directory_uri() . '/assets/img/3col_r.png'
+                    ),
+                    '6l' => array(
+                        'alt' => '3 Column Left Big',
+                        'img' => get_template_directory_uri() . '/assets/img/3col_l.png'
+                    )
+                ),
+                'default'  => '3'
             ),
         )
     ) );
