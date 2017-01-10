@@ -78,7 +78,7 @@ if (!function_exists('cot_custom_row_style_attributes')) :
 endif;
 add_filter('siteorigin_panels_row_style_attributes', 'cot_custom_row_style_attributes', 10, 2);
 
-add_filter('siteorigin_panels_row_style_fields', 'cot_remove_default_so_row_styles');
+//add_filter('siteorigin_panels_row_style_fields', 'cot_remove_default_so_row_styles');
 add_filter('siteorigin_premium_upgrade_teaser', '__return_false');
 
 

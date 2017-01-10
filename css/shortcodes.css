@@ -7,7 +7,7 @@
 .cot-paralax .sub-title{
     color: #fff;
 }
-.cot-overlay,
+.cot-overlay .panel-grid-cell,
 .cot-paralax .panel-grid-cell {
     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%) repeat scroll 0 0;
     height: 100%;

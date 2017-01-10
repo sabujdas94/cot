@@ -19,9 +19,11 @@ class Cot_Video_Button extends WP_Widget {
 
     public function widget($args, $instance) {
         ?>
+        <?php echo $args['before_widget'];?>
         <div class="cot-video-button">
             <button class="spin circle"><span class="fa fa-play"></button>
         </div>
+        <?php echo $args['after_widget']; ?>
         <?php
     }
 
