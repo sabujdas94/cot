@@ -36,17 +36,17 @@ if (!function_exists('cot_custom_row_style_fields')) :
             'group' => 'layout'
         );
         $fields['parallax'] = array(
-            'name' => __('Parallax', 'siteorigin-panels'),
+            'name' => __('Parallax', 'cot'),
             'type' => 'checkbox',
             'group' => 'design',
-            'description' => __('If enabled, the background image will have a parallax effect.', 'siteorigin-panels'),
+            'description' => __('If enabled, the background image will have a parallax effect.', 'cot'),
             'priority' => 8,
         );
         $fields['overlay'] = array(
-            'name' => __('Overlay', 'siteorigin-panels'),
+            'name' => __('Overlay', 'cot'),
             'type' => 'checkbox',
             'group' => 'design',
-            'description' => __('If enabled, the background image will have a parallax effect.', 'siteorigin-panels'),
+            'description' => __('If enabled, the background image will have a parallax effect.', 'cot'),
             'priority' => 8,
         );
 

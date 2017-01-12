@@ -58,7 +58,7 @@ class Cot_List_Widget extends WP_Widget {
         <p><label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Add a bit of text here. It will be displayed above list.', 'cot'); ?></label>
             <textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea></p>
 
-        <p><label for="<?php echo $this->get_field_id('list'); ?>"><?php _e('Add your list items here. One item per row, start each row with <strong>^</strong>. Example: <strong>^ list item </strong>', 'sydney'); ?></label>
+        <p><label for="<?php echo $this->get_field_id('list'); ?>"><?php _e('Add your list items here. One item per row, start each row with <strong>^</strong>. Example: <strong>^ list item </strong>', 'cot'); ?></label>
             <textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('list'); ?>" name="<?php echo $this->get_field_name('list'); ?>"><?php echo $list; ?></textarea></p>
 
         <p><label for="<?php echo $this->get_field_id('icon'); ?>"><?php _e('Custom list icon. Copy past the full icon class name:', 'cot'); ?></label>

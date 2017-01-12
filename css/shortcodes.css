@@ -64,6 +64,9 @@
 }
 .cot-heading hr {
     background: #9d426b none repeat scroll 0 0;
+}
+
+.cot-heading.style1 hr{
     border: 2px solid #9d426b;
     margin-top: 0;
     width: 60px;

@@ -32,7 +32,7 @@ if (!class_exists('Cot_Heading')) :
         public function widget($args, $instance) {
             echo $args['before_widget'];
             if ( !empty($instance['title']) ) {
-                echo '<div class="cot-heading">';
+                echo '<div class="cot-heading style1">';
                 
                 if ('before' === $instance['position']) {
                     echo '<h4>'.strip_tags($instance['subtitle'],'<span><span>').'</h4><h2>'. strip_tags($instance['title'], '<span><strong>').'</h2><hr>';

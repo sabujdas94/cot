@@ -16,11 +16,6 @@ include_once get_template_directory() . '/inc/menu/wp_bootstrap_navwalker.php';
  */
 include_once get_template_directory() . '/inc/menu/icon-menu.php';
 
-/**
- * Load Theme Shortcodes
- */
-include_once get_template_directory() . '/inc/shortcodes/shortcodes.php';
-
 /*
  * footer widget file
  */
@@ -40,6 +35,7 @@ include_once get_template_directory() . '/inc/page-builder.php';
 if ( function_exists('siteorigin_panels_activate') ) {
     include_once get_template_directory() . "/inc/widgets/cover-section.php";
     include_once get_template_directory() . "/inc/widgets/cot-heading.php";
+    include_once get_template_directory() . "/inc/widgets/cot-heading-2.php";
     include_once get_template_directory() . "/inc/widgets/cot-list.php";
     include_once get_template_directory() . "/inc/widgets/cot-play-button.php";
 }

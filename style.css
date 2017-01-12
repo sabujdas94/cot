@@ -145,6 +145,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .site-footer:after {
     clear: both;
 }
+.clearfix{
+    clear: both;
+}
 
 /*--------------------------------------------------------------
 # Typography

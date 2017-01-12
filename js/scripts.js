@@ -6,12 +6,26 @@
 
 jQuery(document).ready(function ($) {
 
+    /*====================================
+     Page a Link Smooth Scrolling 
+     ======================================*/
+
     $('body').smoothScroll({
         delegateSelector: 'a.scroll-button'
     });
 
+    $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+        disableOn: 700,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+
+        fixedContentPos: false
+    });
+    
+    new WOW().init();
+
 });
-new WOW().init();
-/*====================================
- Page a Link Smooth Scrolling 
- ======================================*/
+
+
