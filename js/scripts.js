@@ -23,8 +23,29 @@ jQuery(document).ready(function ($) {
 
         fixedContentPos: false
     });
-    
+
     new WOW().init();
+
+    /*=========================================
+     Isotope
+     ==========================================*/
+    var $container = $('.portfolio-grid');
+    $('.portfolio-filter a').on('click', function() {
+        $('.portfolio-filter .current').removeClass('current');
+        $(this).addClass('current');
+
+        var selector = $(this).attr('data-filter');
+        
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+        return false;
+    });
 
 });
 

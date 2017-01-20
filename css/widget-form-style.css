@@ -4,10 +4,31 @@ CSS Stylesheet for widget form
     Created on : Jan 8, 2017, 9:05:12 AM
     Author     : SABUJ
 */
-
+.cot-row{
+    clear: both;
+    position: relative;
+}
+.cot-row.flex{
+    display: flex;
+}
+.col-4{  
+    float: left;
+    /*width: 33.333%;*/
+    padding: 15px;
+}
+.col-4{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.col-width-33:last-child{
+    border-right: none;
+}
 label {
-  display: inline-block;
-  max-width: 100%;
-  margin-bottom: 5px;
-  font-weight: bold;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.gray{
+    color: rgba(128, 128, 128, 1);
 }

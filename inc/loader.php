@@ -38,4 +38,5 @@ if ( function_exists('siteorigin_panels_activate') ) {
     include_once get_template_directory() . "/inc/widgets/cot-heading-2.php";
     include_once get_template_directory() . "/inc/widgets/cot-list.php";
     include_once get_template_directory() . "/inc/widgets/cot-play-button.php";
+    include_once get_template_directory() . "/inc/widgets/cot-portfolio.php";
 }

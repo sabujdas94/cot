@@ -100,67 +100,155 @@
     transition: all 5ms ease 0s;
 }
 .cot-video-button button {
-  background: none;
-  border: 0;
-  box-sizing: border-box;
-  box-shadow: inset 0 0 0 2px #f45e61;
-  color: #fff;
-  font-size: inherit;
-  padding: 10px 22px;
-  text-align: center;
-  text-transform: capitalize;
-  position: relative;
-  vertical-align: middle;
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 2px #f45e61;
+    color: #fff;
+    font-size: inherit;
+    padding: 10px 22px 10px 27px;
+    text-align: center;
+    text-transform: capitalize;
+    position: relative;
+    vertical-align: middle;
 }
 button::before, button::after {
-  box-sizing: border-box;
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .spin {
-  width: 2em;
-  height: 2em;
-  padding: 0;
+    width: 2em;
+    height: 2em;
+    padding: 0;
 }
 .spin:hover {
-  color: #fff;
+    color: #fff;
 }
 .spin::before, .spin::after {
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
 }
 .spin::before {
-  border: 2px solid transparent;
+    border: 2px solid transparent;
 }
 .spin:hover::before {
-  border-top-color: #fff;
-  border-right-color: #fff;
-  border-bottom-color: #fff;
-  -webkit-transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
-  transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
+    border-top-color: #fff;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    -webkit-transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
+    transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
 }
 .spin::after {
-  border: 0 solid transparent;
+    border: 0 solid transparent;
 }
 .spin:hover::after {
-  border-top: 2px solid #fff;
-  border-left-width: 2px;
-  border-right-width: 2px;
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
-  -webkit-transition: border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
-  transition: border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
-  transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s;
-  transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+    border-top: 2px solid #fff;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    -webkit-transition: border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+    transition: border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+    transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s;
+    transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
 }
 
 .circle {
-  border-radius: 100%;
-  box-shadow: none;
+    border-radius: 100%;
+    box-shadow: none;
 }
 .circle::before, .circle::after {
-  border-radius: 100%;
+    border-radius: 100%;
 }
+
+
+.portfolio-filter {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.portfolio-filter > a {
+  background-color: #f5f5f5;
+  color: #767676;
+  display: inline-block;
+  font-weight: 600;
+  padding: 5px 20px;
+  position: relative;
+  text-align: center;
+  transition: background 0.3s ease 0s;
+}
+
+.portfolio-filter > a:hover,
+.portfolio-filter > a.current{
+    background-color: #9D426B;
+    color: #fff;
+}
+.nopadding{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.portfolio-item .hover-bg{
+    max-height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hover-bg .hover-text {
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.66);
+    padding: 30% 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.hover-bg .hover-text > h5 {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  opacity: 0;
+  text-transform: uppercase;
+  transform: translateY(100%);
+  transition: all 0.3s ease 0s;
+}
+.hover-bg:hover .hover-text>h5{
+    opacity: 1;
+    -webkit-backface-visibility:hidden;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+.hover-bg .hover-text>.hline{
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    transition: all 0.3s;
+}
+.hover-bg:hover .hover-text>.hline{
+    opacity: 1;
+    -webkit-backface-visibility:hidden;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+.hover-bg:hover .hover-text{
+    opacity: 1;
+}
+.hline{
+    height: 5px;
+    width: 30px;
+    border-top: 2px solid #f1f1f1;
+    margin: 0 auto
+}
+
+.hover-text p.lead {
+  color: #c59a6d;
+  font-weight: 600;
+}
+
+
