@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Page Builder Widget Handining
  * @author_url https://github.com/sabujdas94
@@ -46,7 +45,7 @@ if (!function_exists('cot_custom_row_style_fields')) :
             'name' => __('Overlay', 'cot'),
             'type' => 'checkbox',
             'group' => 'design',
-            'description' => __('If enabled, the background image will have a parallax effect.', 'cot'),
+            'description' => __('If enabled, the background image will have a dark effect.', 'cot'),
             'priority' => 8,
         );
 
@@ -99,3 +98,13 @@ function cot_row_styles_output($attr, $style) {
 }
 
 add_filter('siteorigin_panels_row_style_attributes', 'cot_row_styles_output', 10, 2);
+
+/**
+ * Enqueue all my widget's admin scripts
+ */
+function cot_widget_enqueue_scripts(){
+    wp_enqueue_script('cot-admin-widget', get_template_directory_uri() . '/js/admin-widget.js', array('jquery','jquery-ui-sortable'), FALSE, TRUE);
+}
+add_action( 'admin_print_scripts-widgets.php', 'cot_widget_enqueue_scripts' );
+// Add this to enqueue your scripts on Page Builder too
+add_action('siteorigin_panel_enqueue_admin_scripts', 'cot_widget_enqueue_scripts');

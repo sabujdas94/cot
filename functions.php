@@ -108,7 +108,7 @@ function cot_widgets_init() {
         'name' => esc_html__('Footer 1st Column', 'cot'),
         'id' => 'footer-1',
         'description' => esc_html__('Add widgets here.', 'cot'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'before_widget' => '<section id="%1$s" class="wow fadeInDown widget %2$s" data-wow-duration="2s" data-wow-delay="1s">',
         'after_widget' => '</section>',
         'before_title' => '<div class="widget-title"><h3>',
         'after_title' => '</h3></div>',
@@ -117,7 +117,7 @@ function cot_widgets_init() {
         'name' => esc_html__('Footer 2nd Column', 'cot'),
         'id' => 'footer-2',
         'description' => esc_html__('Add widgets here.', 'cot'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'before_widget' => '<section id="%1$s" class="wow fadeInUp widget %2$s" data-wow-duration="2s" data-wow-delay="1s">',
         'after_widget' => '</section>',
         'before_title' => '<div class="widget-title"><h3>',
         'after_title' => '</h3></div>',
@@ -126,7 +126,7 @@ function cot_widgets_init() {
         'name' => esc_html__('Footer 3rd Column', 'cot'),
         'id' => 'footer-3',
         'description' => esc_html__('Add widgets here.', 'cot'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'before_widget' => '<section id="%1$s" class="wow fadeInDown widget %2$s" data-wow-duration="2s" data-wow-delay="1s">',
         'after_widget' => '</section>',
         'before_title' => '<div class="widget-title"><h3>',
         'after_title' => '</h3></div>',
@@ -135,7 +135,7 @@ function cot_widgets_init() {
         'name' => esc_html__('Footer 4th Column', 'cot'),
         'id' => 'footer-4',
         'description' => esc_html__('Add widgets here.', 'cot'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'before_widget' => '<section id="%1$s" class="wow fadeInUp widget %2$s" data-wow-duration="2s" data-wow-delay="1s">',
         'after_widget' => '</section>',
         'before_title' => '<div class="widget-title"><h3>',
         'after_title' => '</h3></div>',
@@ -148,6 +148,7 @@ function cot_widgets_init() {
         register_widget('Cot_Video_Button');
         register_widget('Cot_Heading_Two');
         register_widget('Cot_Portfolio');
+        register_widget('Cot_Owl_Carousel');
     }
 }
 
@@ -170,6 +171,8 @@ function cot_scripts() {
     
     wp_enqueue_style('magnific-popup', get_template_directory_uri() . '/css/magnific-popup.css');
     
+    wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.min.css');
+    
     wp_enqueue_style('cot-style', get_stylesheet_uri());
 
     wp_enqueue_style('shortcodes', get_template_directory_uri() . '/css/shortcodes.css');
@@ -186,11 +189,13 @@ function cot_scripts() {
     
     wp_enqueue_script('magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), false, true);
 
-    wp_enqueue_script('cot-bootstrap-hover-dropdown', get_template_directory_uri() . '/js/bootstrap-hover-dropdown.js', array('jquery', 'bootstrap'), false, true);
+    wp_enqueue_script('cot-bootstrap-hover-dropdown', get_template_directory_uri() . '/js/bootstrap-hover-dropdown.min.js', array('jquery', 'bootstrap'), false, true);
 
     wp_enqueue_script('wow', get_template_directory_uri() . '/js/wow.min.js', array(), false, true);
 
     wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/js/jquery.smooth-scroll.js', array(), false, true);
+
+    wp_enqueue_script('owl-carosul', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), false, true);
     
     wp_enqueue_script('isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), false, false);
 
@@ -259,4 +264,5 @@ if (!isset($redux_demo) && file_exists(dirname(__FILE__) . '/inc/helpers/redux-f
  * Load required file loader.
  */
 require get_template_directory() . '/inc/loader.php';
+
 

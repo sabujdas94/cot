@@ -3,7 +3,7 @@
 /**
  * Portfolio widget
  *
- * @package Sydney
+ * @package Cot
  */
 class Cot_Portfolio extends WP_Widget {
 
@@ -130,7 +130,7 @@ class Cot_Portfolio extends WP_Widget {
         $instance = $old_instance;
         
         $instance['source'] = strip_tags($new_instance['source']);
-        $instance['slugs']  = $new_instance['slugs'] ;
+        $instance['slugs']  = esc_attr( $new_instance['slugs'] );
         $instance['total']  = absint($new_instance['total']);
         $instance['filter'] = absint($new_instance['filter']);
         $instance['showalltext'] = strip_tags($new_instance['showalltext']);

@@ -2,7 +2,7 @@
 /*
  * cot list style widget
  *
- * @author SABUJ
+ * @author iam00
  */
 
 class Cot_List_Widget extends WP_Widget {

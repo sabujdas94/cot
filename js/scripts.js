@@ -30,12 +30,12 @@ jQuery(document).ready(function ($) {
      Isotope
      ==========================================*/
     var $container = $('.portfolio-grid');
-    $('.portfolio-filter a').on('click', function() {
+    $('.portfolio-filter a').on('click', function () {
         $('.portfolio-filter .current').removeClass('current');
         $(this).addClass('current');
 
         var selector = $(this).attr('data-filter');
-        
+
         $container.isotope({
             filter: selector,
             animationOptions: {
@@ -45,6 +45,19 @@ jQuery(document).ready(function ($) {
             }
         });
         return false;
+    });
+
+    /*============================================
+     * Owl Carosul
+     ============================================*/
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            margin: 10,
+            loop: true,
+            autoWidth: true,
+            items: 4,
+            center: true
+        });
     });
 
 });

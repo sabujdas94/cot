@@ -1,3 +1,9 @@
+.panel-grid {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.style2.dark h2{ color: #fff; }
+.style2.dark div{ color: #f1f1f1; }
 .cot-paralax {
     background-attachment: fixed;
     background-size: cover;
@@ -12,10 +18,7 @@
     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%) repeat scroll 0 0;
     height: 100%;
 }
-.panel-grid {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
+
 .btn {
     border-radius: 0;
     font-weight: 900;

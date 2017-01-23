@@ -33,9 +33,10 @@ if (!class_exists('Cot_Heading_Two')) :
             $title = !empty($instance['title']) ? strip_tags($instance['title'], '<span><strong>') : '';
             $content = !empty($instance['content']) ? strip_tags($instance['content'], '<span><strong><br>') : '';
             $alignment = (!empty($instance['alignment']) ) ? strip_tags($instance['alignment']) : 'left';
+            $theme = ( !empty($instance['theme']) ) ? strip_tags($instance['theme']) : 'light';
 
             echo $args['before_widget'];
-            echo '<div class="cot-heading style2">';
+            echo '<div class="cot-heading style2 '.$theme.'">';
             ?>
 
             <h2 class="text-<?php echo $alignment; ?>"><?php echo $title; ?></h2>
@@ -55,9 +56,10 @@ if (!class_exists('Cot_Heading_Two')) :
          * @param array $instance Previously saved values from database.
          */
         public function form($instance) {
-            $title = !empty($instance['title']) ? $instance['title'] : '';
-            $content = !empty($instance['content']) ? $instance['content'] : '';
-            $alignment = !empty($instance['alignment']) ? $instance['alignment'] : 'left';
+            $title = !empty($instance['title']) ? strip_tags($instance['title'],'<span><strong>') : '';
+            $content = !empty($instance['content']) ? strip_tags($instance['content'], '<span><strong>') : '';
+            $alignment = !empty($instance['alignment']) ? strip_tags( $instance['alignment'] ) : 'left';
+            $theme = !empty($instance['theme']) ? strip_tags($instance['theme']) : 'light';
             ?>
             <p>
                 <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><strong><?php esc_attr_e('Title:', 'cot'); ?></strong></label> 
@@ -73,6 +75,13 @@ if (!class_exists('Cot_Heading_Two')) :
                     <option <?php if ('left' === $alignment) echo 'selected'; ?> value="left"><?php _e('Left', 'cot'); ?></option>
                     <option <?php if ('center' === $alignment) echo 'selected'; ?> value="center"><?php _e('Center', 'cot'); ?></option>
                     <option <?php if ('right' === $alignment) echo 'selected'; ?> value="right"><?php _e('Right', 'cot'); ?></option>
+                </select>
+            </p>
+            <p>
+                <label for="<?php echo esc_attr($this->get_field_id('theme')); ?>"><?php esc_attr_e('Theme:', 'cot'); ?></label> 
+                <select class="widefat" name="<?php echo esc_attr($this->get_field_name('theme')) ?>" id="<?php echo esc_attr($this->get_field_id('theme')); ?>">
+                    <option <?php if ('light' === $theme) echo 'selected'; ?> value="light"><?php _e('Light', 'cot'); ?></option>
+                    <option <?php if ('dark' === $theme) echo 'selected'; ?> value="dark"><?php _e('Dark', 'cot'); ?></option>
                 </select>
             </p>
             <?php
@@ -93,6 +102,7 @@ if (!class_exists('Cot_Heading_Two')) :
             $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title'], '<span><strong>') : '';
             $instance['content'] = (!empty($new_instance['content']) ) ? strip_tags($new_instance['content'], '<span><strong><br>') : '';
             $instance['alignment'] = (!empty($new_instance['alignment']) ) ? strip_tags($new_instance['alignment']) : '';
+            $instance['theme'] = (!empty($new_instance['theme'])) ? strip_tags($new_instance['theme']) : 'light';
 
 
             $alloptions = wp_cache_get('alloptions', 'options');

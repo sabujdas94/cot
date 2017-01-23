@@ -172,45 +172,40 @@
     );
 
     // ADMIN BAR LINKS -> Setup custom links in the admin bar menu as external items.
-    $args['admin_bar_links'][] = array(
-        'id'    => 'redux-docs',
-        'href'  => 'http://docs.reduxframework.com/',
-        'title' => __( 'Documentation', 'cot' ),
-    );
-
-    $args['admin_bar_links'][] = array(
-        //'id'    => 'redux-support',
-        'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
-        'title' => __( 'Support', 'cot' ),
-    );
-
-    $args['admin_bar_links'][] = array(
-        'id'    => 'redux-extensions',
-        'href'  => 'reduxframework.com/extensions',
-        'title' => __( 'Extensions', 'cot' ),
-    );
+//    $args['admin_bar_links'][] = array(
+//        'id'    => 'redux-docs',
+//        'href'  => 'http://docs.reduxframework.com/',
+//        'title' => __( 'Documentation', 'cot' ),
+//    );
+//
+//    $args['admin_bar_links'][] = array(
+//        //'id'    => 'redux-support',
+//        'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
+//        'title' => __( 'Support', 'cot' ),
+//    );
+//
+//    $args['admin_bar_links'][] = array(
+//        'id'    => 'redux-extensions',
+//        'href'  => 'reduxframework.com/extensions',
+//        'title' => __( 'Extensions', 'cot' ),
+//    );
 
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
     $args['share_icons'][] = array(
-        'url'   => 'https://github.com/ReduxFramework/ReduxFramework',
-        'title' => 'Visit us on GitHub',
-        'icon'  => 'el el-github'
+        'url'   => 'mailto:sabujdas94@gmail.com',
+        'title' => 'Mail Me',
+        'icon'  => 'el el-envelope'
         //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
     );
     $args['share_icons'][] = array(
-        'url'   => 'https://www.facebook.com/pages/Redux-Framework/243141545850368',
-        'title' => 'Like us on Facebook',
+        'url'   => 'https://www.facebook.com/sabujdas94',
+        'title' => 'Find Me on Facebook',
         'icon'  => 'el el-facebook'
     );
     $args['share_icons'][] = array(
-        'url'   => 'http://twitter.com/reduxframework',
-        'title' => 'Follow us on Twitter',
-        'icon'  => 'el el-twitter'
-    );
-    $args['share_icons'][] = array(
-        'url'   => 'http://www.linkedin.com/company/redux-framework',
-        'title' => 'Find us on LinkedIn',
-        'icon'  => 'el el-linkedin'
+        'url'   => 'https://www.peopleperhour.com/freelancer/sabuj/web-design-developing-expert/829317',
+        'title' => 'Hire Me on PeoplePerHour.com',
+        'img'  => get_template_directory_uri() . '/assets/icon/pph.png'
     );
 
     // Panel Intro text -> before the form
@@ -222,11 +217,11 @@
         }
         $args['intro_text'] = 'You need to click <b>Save Changes</b> after made any change';
     } else {
-        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'cot' );
+      //  $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'cot' );
     }
 
     // Add content after the form.
-    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'cot' );
+    //$args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'cot' );
 
     Redux::setArgs( $opt_name, $args );
 
